@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Corinthians Store - Promoções</title>
+    <link rel="stylesheet" href="styles.css" />
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="logo">
+                <img src="img/1.svg" alt="Corinthians" class="logo-img" />
+                <a href="index.html">Corinthians Store</a> </h1>
+
+            <div class="header-icons">
+                <button id="cart-toggle" class="cart-toggle" aria-label="Abrir/Fechar carrinho">🛒 <span id="cart-count" class="cart-count">0</span></button>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Abrir/Fechar menu">☰</button>
+            </div>
+
+            <nav id="nav" class="nav" role="navigation">
+                <ul class="nav-links">
+                    <li class="has-submenu">
+                        <a href="#">Produtos</a>
+                        <ul class="submenu" aria-label="submenu produtos">
+                            <li><a href="acessorios.html">Acessórios</a></li>
+                            <li><a href="camisas.html">Camisas</a></li>
+                            <li><a href="promocoes.html">Promoções</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#contato">Contato</a></li> </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <img src="img/1.svg" alt="Corinthians" class="logo-img" />
+            <h2>Promoções Imperdíveis</h2>
+            <p>Garanta já o seu produto oficial com desconto!</p>
+        </div>
+    </section>
+
+    <section class="section-title-promotions container">
+        <h2>Ofertas da Semana</h2>
+    </section>
+
+    <section class="products container" id="promocoes-lista">
+        <div class="product-card">
+            <img src="img/bone corinthians.jpeg" alt="Boné Corinthians" />
+            <h3>Boné Corinthians <br><span style="text-decoration: line-through; color: #999;">R$ 89,90</span></h3>
+            <p style="color: #e00000; font-weight: bold;">R$ 69,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="bone-corinthians-promo" 
+                    data-product-name="Boné Corinthians (Promoção)" 
+                    data-product-price="69.90"
+                    data-product-image="img/bone corinthians.jpeg">
+                Comprar
+            </button>
+        </div>
+        <div class="product-card">
+            <img src="img/mochila.jpeg" alt="Mochila Timão" />
+            <h3>Mochila Timão <br><span style="text-decoration: line-through; color: #999;">R$ 199,90</span></h3>
+            <p style="color: #e00000; font-weight: bold;">R$ 149,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="mochila-timao-promo" 
+                    data-product-name="Mochila Timão (Promoção)" 
+                    data-product-price="149.90"
+                    data-product-image="img/mochila.jpeg">
+                Comprar
+            </button>
+        </div>
+        <div class="product-card">
+            <img src="img/camisa2023.avif" alt="Camisa Oficial 2023" />
+            <h3>Camisa Oficial 2023 <br><span style="text-decoration: line-through; color: #999;">R$ 199,90</span></h3>
+            <p style="color: #e00000; font-weight: bold;">R$ 159,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="camisa-2023-promo" 
+                    data-product-name="Camisa Oficial 2023 (Promoção)" 
+                    data-product-price="159.90"
+                    data-product-image="img/camisa 2023.webp">
+                Comprar
+            </button>
+        </div>
+        </section>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Corinthians Store - Todos os direitos reservados</p>
+    </footer>
+
+    <button id="backToTop" title="Voltar ao topo">↑</button>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button id="close-cart" class="close-cart" aria-label="Fechar carrinho">✖</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-message">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">R$ 0,00</span>
+            </div>
+            <button class="btn btn-checkout">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

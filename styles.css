@@ -1,0 +1,586 @@
+/* RESET E CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui bordas no cálculo do tamanho */
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #111; /* Fundo escuro */
+    color: #fff;            /* Texto claro */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto; /* Centraliza o conteúdo */
+}
+
+/* ===================== CABEÇALHO ===================== */
+.header {
+    background-color: #000;
+    padding: 1rem 0;
+    border-bottom: 3px solid #fff;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Logo e menu/ícones nas extremidades */
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaço entre ícone e texto */
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.logo a { /* Estilo para o link dentro do logo */
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.logo a:hover {
+    color: #aaa;
+}
+
+.logo-img {
+    width: 40px;
+    height: auto;
+}
+
+/* ===================== ÍCONES DO CABEÇALHO ===================== */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Espaçamento entre o ícone do carrinho e o menu hambúrguer */
+}
+
+.cart-toggle {
+    font-size: 1.5rem; /* Tamanho do ícone do carrinho */
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative; /* Para posicionar o contador */
+    padding: 0.5rem; /* Ajuste para melhor área de clique */
+}
+
+.cart-count {
+    background-color: #e00000; /* Cor vermelha para o contador */
+    color: #fff;
+    font-size: 0.8rem;
+    border-radius: 50%; /* Borda redonda */
+    padding: 2px 6px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(25%, -25%); /* Ajusta a posição para ficar no canto superior direito */
+    min-width: 20px; /* Garante que o círculo tenha um tamanho mínimo */
+    text-align: center;
+    line-height: 1; /* Ajusta a altura da linha para centralizar o número */
+}
+
+/* ===================== MENU NAVEGAÇÃO ===================== */
+.nav {
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #aaa;
+}
+
+/* Botão hambúrguer visível apenas no mobile */
+.menu-toggle {
+    display: none; /* Inicia oculto */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===================== RESPONSIVIDADE (Geral e Menu) ===================== */
+@media (max-width: 768px) {
+    /* Ajusta a exibição do menu-toggle para mobile */
+    .menu-toggle {
+        display: block; /* Mostra o botão hambúrguer no mobile */
+    }
+
+    /* Esconde o menu de navegação e ajusta para exibição vertical no mobile */
+    .nav {
+        display: none; /* Esconde o menu no mobile por padrão */
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 70px; /* Ajusta se o header height mudar */
+        right: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        z-index: 100;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5); /* Sombra para o menu mobile */
+    }
+
+    .nav.show {
+        display: flex; /* Exibe menu quando ativo */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Ajustes para o carrinho no mobile */
+    .cart-sidebar {
+        width: 80%; /* Mais largo no mobile */
+        right: -80%; /* Ajusta para esconder completamente */
+    }
+}
+
+/* ===== SUBMENU EM "PRODUTOS" ===== */
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    border: 1px solid #444;
+    border-radius: 4px;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+.submenu li {
+    list-style: none;
+}
+
+.submenu a {
+    display: block;
+    padding: 0.7rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+}
+
+.submenu a:hover {
+    background-color: #222;
+    color: #e00000;
+}
+
+/* Mostrar submenu ao passar mouse (desktop) */
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+/* ===================== SEÇÃO HERO ===================== */
+.hero {
+    position: relative;
+    background-image: url(img/Sem-nome-600-x-375-px-7.png); /* Imagem de fundo da Arena Corinthians */
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    background-position: center; /* Centraliza a imagem */
+    height: 250px; /* Altura da seção hero */
+    display: flex; /* Para centralizar o conteúdo do overlay */
+    align-items: center; /* Centraliza verticalmente o overlay */
+    justify-content: center; /* Centraliza horizontalmente o overlay */
+    color: #fff; /* Cor do texto dentro do hero */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+.hero-overlay {
+    /* Adiciona um fundo semi-transparente para o texto ficar legível sobre a imagem */
+    background-color: rgba(0, 0, 0, 0.6); /* Preto com 60% de opacidade */
+    padding: 1rem 2rem; /* Espaçamento interno para o texto */
+    border-radius: 8px; /* Bordas arredondadas para o container do texto */
+    max-width: 500px; /* Limita a largura do container do texto */
+    margin: 0 auto; /* Centraliza o container do texto horizontalmente */
+
+    /* Garante que o texto dentro do overlay não tenha margens indesejadas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Para garantir que o texto não "escape" do overlay e a área do overlay não seja muito grande */
+.hero-overlay h2,
+.hero-overlay p {
+    margin: 0; /* Remover margens padrão se estiverem causando espaçamento indesejado */
+}
+
+/* ===================== TÍTULO DE SEÇÃO (Promoções, Camisas, Acessórios) ===================== */
+.section-title-promotions { /* Nome genérico para ser usado em outras páginas também */
+    text-align: center; /* Centraliza o texto do título */
+    padding: 2rem 0 1rem 0; /* Espaçamento: 2rem acima, 0 nas laterais, 1rem abaixo */
+}
+
+.section-title-promotions h2 {
+    font-size: 2rem; /* Tamanho da fonte para o título */
+    color: #e00000; /* Cor vermelha para o título, destacando */
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    position: relative; /* Necessário para posicionar o pseudo-elemento ::after */
+    padding-bottom: 10px; /* Espaço para a linha decorativa abaixo do texto */
+}
+
+.section-title-promotions h2::after {
+    content: ''; /* Conteúdo vazio para criar a linha decorativa */
+    position: absolute; /* Posicionamento absoluto em relação ao h2 pai */
+    left: 50%; /* Inicia a linha no centro horizontal do h2 */
+    transform: translateX(-50%); /* Move a linha 50% de sua própria largura para a esquerda, centralizando-a */
+    bottom: 0; /* Posiciona a linha na parte inferior do h2 */
+    width: 80px; /* Largura da linha */
+    height: 3px; /* Espessura da linha */
+    background-color: #e00000; /* Cor da linha */
+    border-radius: 2px; /* Bordas arredondadas para a linha */
+}
+
+/* ===================== PRODUTOS (CARDS) ===================== */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0 2rem 0; /* Ajusta o padding para dar espaço ao título e ao botão */
+    width: 100%; /* Garante que a seção ocupe a largura total do container */
+}
+
+.product-card {
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: space-between; /* Empurra a imagem para cima e o botão para baixo, se necessário */
+    height: 100%; /* Garante que todos os cards tenham a mesma altura se estiverem na mesma linha */
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 6px;
+    height: 250px; /* Defina uma altura fixa para todas as imagens (ajuste conforme necessário) */
+    object-fit: contain; /* Redimensiona a imagem para caber na área, mantendo a proporção */
+    margin: 0 auto 1rem auto; /* Centraliza horizontalmente e adiciona margem inferior */
+    display: block; /* Garante que as margens automáticas funcionem */
+}
+
+.product-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.product-card p {
+    margin: 0.5rem 0;
+    color: #ccc;
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço restante para empurrar o botão para baixo */
+    display: flex; /* Para centralizar o texto verticalmente dentro do p se ele tiver altura definida */
+    align-items: center; /* Alinha o texto verticalmente no centro */
+    justify-content: center; /* Alinha o texto horizontalmente no centro */
+    min-height: 2rem; /* Garante uma altura mínima para o preço, se ele variar de linha */
+}
+
+/* ===================== BOTÃO "VEJA MAIS PROMOÇÕES" ===================== */
+.more-promotions-section {
+    text-align: center; /* Centraliza o botão dentro da sua seção */
+    padding-bottom: 3rem; /* Adiciona um bom espaçamento abaixo do botão */
+    padding-top: 1rem; /* Um pouco de padding acima do botão para separar dos produtos */
+}
+
+.btn-promotions {
+    font-size: 1.1rem; /* Aumenta o tamanho da fonte do botão */
+    padding: 0.8rem 1.8rem; /* Aumenta o padding interno do botão */
+    border-radius: 50px; /* Deixa o botão mais arredondado, estilo "pílula" */
+    background: #e00000; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    text-decoration: none; /* Remove o sublinhado padrão de links */
+    display: inline-block; /* Permite aplicar padding e margin como um bloco, mas mantém o alinhamento de texto */
+    transition: background 0.3s ease, transform 0.3s ease; /* Transição suave para o hover */
+}
+
+.btn-promotions:hover {
+    background: #ff3333; /* Cor de fundo no hover */
+    transform: translateY(-2px); /* Pequeno efeito de elevação no hover */
+}
+
+/* ===================== BOTÕES GERAIS ===================== */
+.btn {
+    background: #e00000;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #ff3333;
+}
+
+/* ===================== FORMULÁRIO DE CONTATO ===================== */
+.contact {
+    padding: 2rem 0;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #222;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* ===================== RODAPÉ ===================== */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000;
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    color: #aaa;
+}
+
+/* ===================== BOTÃO VOLTAR AO TOPO ===================== */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #e00000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 0.7rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 999;
+    display: none; /* Oculto inicialmente */
+    transition: background 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #ff3333;
+}
+
+
+/* ===================== CARRINHO DE COMPRAS (SIDEBAR) ===================== */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px; /* Escondido por padrão, 350px é a largura do sidebar */
+    width: 350px;
+    height: 100%;
+    background-color: #1a1a1a; /* Fundo do carrinho */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+    z-index: 1001; /* Acima de outros elementos */
+    transition: right 0.3s ease-in-out; /* Animação de abertura/fechamento */
+    display: flex;
+    flex-direction: column; /* Organiza header, items, footer em coluna */
+}
+
+.cart-sidebar.open {
+    right: 0; /* Mostra o carrinho quando a classe 'open' é adicionada */
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #444;
+}
+
+.cart-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s;
+}
+
+.close-cart:hover {
+    color: #e00000;
+}
+
+.cart-items {
+    flex-grow: 1; /* Permite que a lista de itens ocupe o espaço restante */
+    padding: 1rem;
+    overflow-y: auto; /* Adiciona scroll se houver muitos itens */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #333; /* Linha divisória */
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h4 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.cart-item-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.quantity-btn:hover {
+    background: #555;
+}
+
+.remove-item {
+    background: #e00000;
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.remove-item:hover {
+    background: #ff3333;
+}
+
+.cart-footer {
+    padding: 1rem;
+    border-top: 1px solid #444;
+    text-align: right;
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    background: #e00000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-checkout:hover {
+    background: #ff3333;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #aaa;
+    margin-top: 2rem;
+}
+
+/* ===================== OVERLAY DO CARRINHO ===================== */
+/* Este overlay é adicionado e removido dinamicamente pelo JS */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    z-index: 1000; /* Abaixo do carrinho, acima do resto */
+    display: none; /* Escondido por padrão */
+}
+
+.cart-overlay.show {
+    display: block; /* Mostra quando o carrinho está aberto */
+}

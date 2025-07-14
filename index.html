@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loja Corinthians</title>
+    <link rel="stylesheet" href="styles.css" />
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="logo">
+                <img src="img/1.svg" alt="Corinthians" class="logo-img" />
+                <a href="index.html">Corinthians Store</a> </h1>
+
+            <div class="header-icons">
+                <button id="cart-toggle" class="cart-toggle" aria-label="Abrir/Fechar carrinho">🛒 <span id="cart-count" class="cart-count">0</span></button>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Abrir/Fechar menu">☰</button>
+            </div>
+
+            <nav id="nav" class="nav" role="navigation">
+                <ul class="nav-links">
+                    <li class="has-submenu">
+                        <a href="#">Produtos</a>
+                        <ul class="submenu" aria-label="submenu produtos">
+                            <li><a href="acessorios.html">Acessórios</a></li>
+                            <li><a href="camisas.html">Camisas</a></li>
+                            <li><a href="promocoes.html">Promoções</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <img src="img/1.svg" alt="Corinthians" class="logo-img" />
+            <h2>Produtos Oficiais do Timão</h2>
+            <p>Vista a camisa com orgulho!</p>
+        </div>
+    </section>
+
+    <section class="section-title-promotions container">
+        <h2>Promoções</h2>
+    </section>
+
+    <section class="products container" id="produtos">
+        <div class="product-card">
+            <img src="img/camisa 2024.webp" alt="Camisa 2024" />
+            <h3>Camisa Oficial 2024</h3>
+            <p>R$ 249,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="camisa-2024" 
+                    data-product-name="Camisa Oficial 2024" 
+                    data-product-price="249.90"
+                    data-product-image="img/camisa 2024.webp">
+                Comprar
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/bone corinthians.jpeg" alt="Boné Corinthians" />
+            <h3>Boné Corinthians</h3>
+            <p>R$ 89,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="bone-corinthians" 
+                    data-product-name="Boné Corinthians" 
+                    data-product-price="89.90"
+                    data-product-image="img/bone corinthians.jpeg">
+                Comprar
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/mochila.jpeg" alt="Mochila Timão" />
+            <h3>Mochila Timão</h3>
+            <p>R$ 199,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="mochila-timao" 
+                    data-product-name="Mochila Timão" 
+                    data-product-price="199.90"
+                    data-product-image="img/mochila.jpeg">
+                Comprar
+            </button>
+        </div>
+    </section>
+
+    <section class="more-promotions-section container">
+        <a href="promocoes.html" class="btn btn-promotions">Veja mais promoções</a>
+    </section>
+
+    <section id="contato" class="contact">
+        <h2>Fale com a gente Fiel</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required />
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Corinthians Store - Todos os direitos reservados</p>
+    </footer>
+
+    <button id="backToTop" title="Voltar ao topo">↑</button>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button id="close-cart" class="close-cart" aria-label="Fechar carrinho">✖</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-message">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">R$ 0,00</span>
+            </div>
+            <button class="btn btn-checkout">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

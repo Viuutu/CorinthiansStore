@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Corinthians Store - Acessórios</title>
+    <link rel="stylesheet" href="styles.css" />
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="logo">
+                <img src="img/1.svg" alt="Corinthians" class="logo-img" />
+                <a href="index.html">Corinthians Store</a> </h1>
+
+            <div class="header-icons">
+                <button id="cart-toggle" class="cart-toggle" aria-label="Abrir/Fechar carrinho">🛒 <span id="cart-count" class="cart-count">0</span></button>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Abrir/Fechar menu">☰</button>
+            </div>
+
+            <nav id="nav" class="nav" role="navigation">
+                <ul class="nav-links">
+                    <li class="has-submenu">
+                        <a href="#">Produtos</a>
+                        <ul class="submenu" aria-label="submenu produtos">
+                            <li><a href="acessorios.html">Acessórios</a></li>
+                            <li><a href="camisas.html">Camisas</a></li>
+                            <li><a href="promocoes.html">Promoções</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#contato">Contato</a></li> </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <img src="img/1.svg" alt="Corinthians" class="logo-img" />
+            <h2>Acessórios do Timão</h2>
+            <p>Complemente seu estilo Alvinegro!</p>
+        </div>
+    </section>
+
+    <section class="section-title-promotions container">
+        <h2>Todos os Nossos Acessórios</h2>
+    </section>
+
+    <section class="products container" id="acessorios-lista">
+        <div class="product-card">
+            <img src="img/bone corinthians.jpeg" alt="Boné Corinthians" />
+            <h3>Boné Corinthians</h3>
+            <p>R$ 89,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="bone-corinthians-acessorio" 
+                    data-product-name="Boné Corinthians" 
+                    data-product-price="89.90"
+                    data-product-image="img/bone corinthians.jpeg">
+                Comprar
+            </button>
+        </div>
+        <div class="product-card">
+            <img src="img/mochila.jpeg" alt="Mochila Timão" />
+            <h3>Mochila Timão</h3>
+            <p>R$ 199,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="mochila-timao-acessorio" 
+                    data-product-name="Mochila Timão" 
+                    data-product-price="199.90"
+                    data-product-image="img/mochila.jpeg">
+                Comprar
+            </button>
+        </div>
+        <div class="product-card">
+            <img src="img/chaveiro.png" alt="Chaveiro Corinthians" />
+            <h3>Chaveiro Corinthians</h3>
+            <p>R$ 29,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="chaveiro-corinthians" 
+                    data-product-name="Chaveiro Corinthians" 
+                    data-product-price="29.90"
+                    data-product-image="img/chaveiro.png">
+                Comprar
+            </button>
+        </div>
+        <div class="product-card">
+            <img src="img/caneca.jpeg" alt="Caneca Corinthians" />
+            <h3>Caneca Corinthians</h3>
+            <p>R$ 49,90</p>
+            <button class="btn add-to-cart" 
+                    data-product-id="caneca-corinthians" 
+                    data-product-name="Caneca Corinthians" 
+                    data-product-price="49.90"
+                    data-product-image="img/caneca.jpeg">
+                Comprar
+            </button>
+        </div>
+        </section>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Corinthians Store - Todos os direitos reservados</p>
+    </footer>
+
+    <button id="backToTop" title="Voltar ao topo">↑</button>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button id="close-cart" class="close-cart" aria-label="Fechar carrinho">✖</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-message">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">R$ 0,00</span>
+            </div>
+            <button class="btn btn-checkout">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
